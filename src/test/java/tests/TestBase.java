@@ -17,10 +17,10 @@ import java.util.Map;
 
 public class TestBase {
 
-    static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
-
     @BeforeAll
     public static void setUp() {
+        WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+
         RestAssured.baseURI = "https://demoqa.com";
         Configuration.browserSize = webDriverConfig.getBrowserSize();
         Configuration.baseUrl = webDriverConfig.getBaseUrl();
